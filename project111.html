@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classroom Automation</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+
+    .device {
+      text-align: center;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      background-color: #ccc;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .switch::before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: 4px;
+      top: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: left 0.3s ease-in-out;
+    }
+
+    .switch.on::before {
+      left: 32px;
+    }
+
+    .switch.on {
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Classroom Automation</h1>
+
+  <div class="container">
+    <div class="device">
+      <h2>BULB 1</h2>
+      <label class="switch">
+        <input type="checkbox" id="bulb1">
+        <span></span>
+      </label>
+    </div>
+    <div class="device">
+      <h2>BULB 2</h2>
+      <label class="switch">
+        <input type="checkbox" id="bulb2">
+        <span></span>
+      </label>
+    </div>
+    <div class="device">
+      <h2>FAN</h2>
+      <label class="switch">
+        <input type="checkbox" id="fan">
+        <span></span>
+      </label>
+    </div>
+  </div>
+
+  <script>
+    const bulb1Switch = document.getElementById('bulb1');
+    const bulb2Switch = document.getElementById('bulb2');
+    const fanSwitch = document.getElementById('fan');
+
+    bulb1Switch.addEventListener('change', () => {
+      if (bulb1Switch.checked) {
+        // Simulate turning on the bulb
+        console.log('Bulb 1 ON');
+        bulb1Switch.parentElement.classList.add('on');
+      } else {
+        // Simulate turning off the bulb
+        console.log('Bulb 1 OFF');
+        bulb1Switch.parentElement.classList.remove('on');
+      }
+    });
+
+    bulb2Switch.addEventListener('change', () => {
+      if (bulb2Switch.checked) {
+        // Simulate turning on the bulb
+        console.log('Bulb 2 ON');
+        bulb2Switch.parentElement.classList.add('on');
+      } else {
+        // Simulate turning off the bulb
+        console.log('Bulb 2 OFF');
+        bulb2Switch.parentElement.classList.remove('on');
+      }
+    });
+
+    fanSwitch.addEventListener('change', () => {
+      if (fanSwitch.checked) {
+        // Simulate turning on the fan
+        console.log('Fan ON');
+        fanSwitch.parentElement.classList.add('on');
+      } else {
+        // Simulate turning off the fan
+        console.log('Fan OFF');
+        fanSwitch.parentElement.classList.remove('on');
+      }
+    });
+  </script>
+
+</body>
+</html>
